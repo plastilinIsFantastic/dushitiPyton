@@ -7,15 +7,24 @@ class Animal():
         print(f'It\'s {self.name}: {self.age} old')
 
 class Cat(Animal):
-    def speak(self):
-        print(f'Kitten says Meow! It\'s name: {self.name}, old: {self.age}')
+    def __init__(self, name: str, age: int):
+        super().__init__(name, age)
+        print('New born Cat!')
+    
+    def getVoice(self):
+        print('Meow')
 
 class Dog(Animal):
-    def speak(self):
-        print(f'Doogo says Woof! It\'s name: {self.name}, old: {self.age}')
+    def __init__(self, name: str, age: int):
+        super().__init__(name, age)
+        print('New born Dog!')
+
+    def getVoice(self):
+        print('Meow')
 
 cat = Cat("kitty", 2)
 cat.speak()
+cat.getVoice()
 
 dog = Dog("puppy", 1)
 dog.speak()
