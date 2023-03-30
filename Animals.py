@@ -1,3 +1,6 @@
+from functools import total_ordering
+
+@total_ordering
 class Animal():
     def __init__(self, name: str, age: int, size: int = None):
         self.name = name
@@ -8,25 +11,10 @@ class Animal():
     def speak(self):
         print(f'It\'s {self.name}: {self.age} old')
 
-    # magic mikey, noo it are magic compare methods
-    # <
-    def __lt__(self, other):
-        return self.size < other.size
-    # >
-    def __gt__(self, other):
-        return self.size > other.size
-    # ==
-    def __eq__(self, other):
-        return self.size == other.size
+    # functools.total_ordering decorator 
     # >=
     def __le__(self, other):
         return self.size <= other.size
-    # <=
-    def __ge__(self, other):
-        return self.size >= other.size
-    # !=
-    def __ne__(self, other):
-        return self.size != other.size
 
 class Cat(Animal):
     def meow(self):
