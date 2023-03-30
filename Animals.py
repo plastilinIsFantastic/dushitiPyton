@@ -11,10 +11,13 @@ class Animal():
     def speak(self):
         print(f'It\'s {self.name}: {self.age} old')
 
-    # functools.total_ordering decorator 
-    # >=
-    def __le__(self, other):
-        return self.size <= other.size
+    # functools.total_ordering
+    # ==
+    def __eq__(self, other):
+        return self.size == other.size
+    # <
+    def __lt__(self, other):
+        return self.size < other.size
 
 class Cat(Animal):
     def meow(self):
