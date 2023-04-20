@@ -9,7 +9,6 @@ class Animal():
     self.name = name
     self.age = age
     self.size = size
-    Animal.totalNewBorn += self.__class__.__name__
     print(f'New born {self.__class__.__name__}!')
 
 #  @classmethod
