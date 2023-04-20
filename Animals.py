@@ -4,7 +4,6 @@ import names
 
 @total_ordering
 class Animal():
-  lAnimals = []
 
   def __init__(self, name: str, age: int, size: int = None):
     self.name = name
@@ -13,9 +12,7 @@ class Animal():
     Animal.totalNewBorn += self.__class__.__name__
     print(f'New born {self.__class__.__name__}!')
 
-  @classmethod
-  def listAnimals(cls):
-    print(f'Total new born animals: {cls.lAnimals}')
+#  @classmethod
 
   @staticmethod
   def randomName(gender='female'):
